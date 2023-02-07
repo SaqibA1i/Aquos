@@ -10,13 +10,19 @@ import { ArrowDown, ArrowUpLeft } from "react-bootstrap-icons";
 import Circles from "@/components/Circles";
 import WaveImg from "@/images/wave.svg";
 import ProjectPill from "@/components/ProjectPill";
+import { Box } from "styles/Box";
+import Footer from "@/components/Footer";
 
+const VSection = styled(VBox)`
+  justify-content: space-around;
+  gap: 40px;
+`;
 const StyledHBox = styled(HBox)`
   gap: 40px;
 `;
 const StyledVBox = styled(VBox)`
   background: white;
-  width: 100vw;
+  width: -webkit-fill-available;
   gap: 20px;
 `;
 const StyledArrow = styled(ArrowUpLeft)`
@@ -28,7 +34,7 @@ const StyledArrow = styled(ArrowUpLeft)`
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <StyledVBox style={{ gap: "100px" }}>
-      <StyledHBox
+      <VSection
         style={{
           minHeight: "80vh",
           maxHeight: "100vh",
@@ -36,14 +42,16 @@ export default function App({ Component, pageProps }: AppProps) {
           width: "-webkit-fill-available",
         }}
       >
-        <VBox>
-          <H1>Digital Magic</H1>
-          <P>Welcome, my name is Saqib Ali, I am a cona</P>
-          <Button intent="submit">Lets Talk</Button>
-        </VBox>
-        <Wave />
+        <StyledHBox>
+          <VBox>
+            <H1>Digital Magic</H1>
+            <P>Welcome, my name is Saqib Ali, I am a cona</P>
+            <Button intent="submit">Lets Talk</Button>
+          </VBox>
+          <Wave />
+        </StyledHBox>
         <StyledArrow size={35} color={"#333"} />
-      </StyledHBox>
+      </VSection>
       <StyledHBox>
         <VBox>
           <P>We provide concept driven creative identites</P>
@@ -80,23 +88,29 @@ export default function App({ Component, pageProps }: AppProps) {
           year="2022"
           label="Schmart"
           desc="thais ahdad hasidh saidhs ad"
+          color="#576db0"
         />
         <ProjectPill
           year="2022"
           label="Schmart"
           desc="thais ahdad hasidh saidhs ad"
+          color="#f492ff"
         />
         <ProjectPill
           year="2022"
           label="Schmart"
           desc="thais ahdad hasidh saidhs ad"
+          color="#f8996c"
         />
         <ProjectPill
           year="2022"
           label="Schmart"
           desc="thais ahdad hasidh saidhs ad"
+          color="#95cf38"
         />
       </StyledVBox>
+
+      <Footer />
     </StyledVBox>
   );
 }

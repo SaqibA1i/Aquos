@@ -10,14 +10,14 @@ const StyledHBox = styled(HBox)`
 `;
 
 const StyledVBox = styled(VBox)`
-  gap: 10px;
+  gap: 15px;
 `;
 
 const Circles = ({
   children,
   direction,
 }: {
-  children: JSX.Element;
+  children?: JSX.Element;
   direction: string;
 }) => {
   const FlexBox = direction == "right" ? StyledHBox : VBox;
@@ -27,9 +27,9 @@ const Circles = ({
     <FlexBox>
       <Box>{children}</Box>
       <FlexBoxCircle>
-        <CircleFill color="purple" size={10} />
-        <CircleFill color="orange" size={10} />
-        <CircleFill color="green" size={10} />
+        <CircleFill color="#e13798" size={10} />
+        <CircleFill color="#f8996c" size={10} />
+        <CircleFill color="#95cf38" size={10} />
       </FlexBoxCircle>
     </FlexBox>
   );
